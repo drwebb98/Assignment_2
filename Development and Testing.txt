@@ -41,10 +41,35 @@ The if/elif/else clauses have been used where the user inputs the name of the .t
 
 The try/except clauses have been used when the .txt file is being read by the csv reader:
 
-- if a FileNotFound or TypeError is raised, then the programme will end using sys.end(). This should only happen if the first GUI is exited without a working file name inputted. The error shown is "Working file name not entered. This programme will now end."
+- if a FileNotFoundError or TypeError is raised, then the programme will end using sys.end(). This should only happen if the first GUI is exited without a working file name inputted. The error shown is "Working file name not entered. This programme will now end."
 - if a ValueError is raised, then the programme will end using sys.end(). This should only happen if the inputted file is not delimited by a space (it may instead be delimited by a comma (',') or a semicolon (';')), therefore the file is in the wrong format to be used. The error shown is "Values in .txt file are not formatted correctly. This programme will now end."
 
 The programme will only work if the inputted file is height data delimited by spaces (' '). Sometimes these files can have an extra space at the end of the row which can break the programme. To overcome this the following code has been added to remove any extra spaces at the end of the line being read:
 
 if row[-1] == '':
     del row[-1] 
+	
+	
+
+References:
+Sources used in the creation of this software.
+
+Anon. 2020. Create Full Screen Window in Tkinter. [online].[10 May 2021]. Available from: https://www.delftstack.com/howto/python-tkinter/how-to-create-full-screen-window-in-tkinter/
+
+Kareem, H. 2021. time.perf_counter() function in Python. [online].[30 April 2021]. Available from: https://www.tutorialspoint.com/time-perf-counter-function-in-python
+
+Matplotlib development team. 2021. matplotlib.pyplot. [online].[Accessed 2 May 2021]. Available from: https://matplotlib.org/stable/api/pyplot_summary.html
+
+Python Software Foundation. 2021. math — Mathematical functions. [online].[Accessed 26 April 2021]. Availble from: https://docs.python.org/3/library/math.html
+
+Python Software Foundation. 2021. os.path — Common pathname manipulations. [online].[Accessed 12 May 2021]. Availble from: https://docs.python.org/3/library/os.path.html
+
+pythontutorial.net. 2021. Python Write CSV File. [online].[Accessed 5 May 2021]. Available from: https://www.pythontutorial.net/python-basics/python-write-csv-file/
+
+Raj, H. 2019. Python | os.path.isfile() method. [online].[Accessed 12 May 2021]. Available from: https://www.geeksforgeeks.org/python-os-path-isfile-method/
+
+Roseman, M. 2021. TKDocs Tutorial. [online].[Accessed 10 May 2021]. Available from: https://tkdocs.com/tutorial/index.html
+
+Scott, B. [no date]. Using Tkinter Widgets in Python. [online].[Accessed 7 May 2021]. Available from: https://www.dummies.com/programming/python/using-tkinter-widgets-in-python/ 
+
+Willman, J. 2019. When To Use Pack, Place Or Grid In Tkinter. [online][Accessed 7 May 2021]. Available from: https://redhuli.io/pack-place-and-grid-in-tkinter/
