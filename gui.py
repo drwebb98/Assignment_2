@@ -5,12 +5,16 @@ import csv
 import matplotlib
 import matplotlib.pyplot
 
+
+# Creation of first GUI asking for file name input
 class file_input:
 
+    # Global variable so file_name can be used across modules
     def file_name():
         global file_name
         file_name = []
 
+    # Creation of main GUI and widgets
     def file_GUI():
        
         global file_name_widget
@@ -33,8 +37,8 @@ class file_input:
         entry_widget = tkinter.Entry(file_name_widget)
         entry_widget.insert(10, "")
         entry_widget.pack()
-        
-
+             
+    # Button to submit input with error messages to prevent code breaking        
     def enter_button():
 
         file_input.file_name = entry_widget.get()
@@ -60,9 +64,10 @@ class file_input:
         
 
 
-
+# Creation of second GUI where output is produced
 class output:
    
+    # Save file as a .txt file, message to tell user file has been saved
     def save_txt_file(all_slopes, file_name):
         f2 = open(file_name +'_slopes.txt', 'w', newline='')
         writer = csv.writer(f2, delimiter=' ')
@@ -80,9 +85,11 @@ class output:
             "Please Try Again.")
             label_widget.pack()
     
+    # Exit command to leave the GUI and end the programme
     def exit():
         maps_widget.destroy()
 
+    # Creation of main GUI and widgets
     def maps_GUI(fig0, fig1, all_slopes, file_name):
 
         global maps_widget
