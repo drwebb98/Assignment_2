@@ -1,0 +1,50 @@
+Software Development:
+
+The software began by reading data from an original supplied .txt file. The maximum gradient was then calculated for a single cell in the top left hand corner of the data. These gradients were calculated using separate sections of code for each of the eight named variables surrounding the central cell that was being calculated (e):
+
+a  b  c
+d  e  f 
+g  h  k
+
+The letter k was used so that the letters i and j can be used as variables in creating the slopes_row and all_slopes variables.
+
+This code was then changed so that it calculated the gradients for every single cell (except for those on the boundaries of the data) based on their relative position to the cell that is being worked on.
+The code was then improved and streamlined by using two calculations rather than eight with separate calculations for the adjacent cells and the non-adjacent cells.
+
+The maximum gradient out of the eight calculated for each cell is selected and then appended into the slopes_row variable. Once all of the slopes have been calculated for a row, the entire row is then appended as into the all_slopes variable.
+
+
+The software was initially made so that one file (snow_heights.txt) could be analysed to create visual outputs for its heights and slopes. The software was then developed with the use of a GUI so that any inputted .txt file of the correct formatting could be analysed and the two visual outputs could be produced for that given file. To show this there are three different .txt files provided of different sizes of data: snow_heights.txt ; test1.txt ; test2.txt
+
+
+The visual outputs started off as two separate plots made with matplotlib. Using a tkinter GUI these two figures have been placed adjacent to each other for comparison, and the option of saving a .txt file of a similar format to the original inputted file has been added for the newly produced slopes file (ending in _slopes.txt). A colourbar has also been added to the slopes plot to act as a legend to explain what the output is showing.
+
+
+
+Testing:
+
+Each time the code for calculating the maximum slopes was improved and shortened, the results of each iteration were compared to each other using:   
+
+if all_slopes == all_slopes_new:
+	print("Iterations match")
+else:
+	print("Iterations do not match")
+
+
+To prevent the code from breaking, try/except clauses and if/elif/else clauses have been used to give the user messages if something goes wrong. 
+
+The if/elif/else clauses have been used where the user inputs the name of the .txt file:
+
+- "No file input detected, please try again" if the user does not input anything
+- "File type incorrect, please try again" if the input does not contain the string '.txt' at the end of it
+- ".txt file not found in this directory, please try again" if the input ends in the string '.txt' but the file name cannot be found within the same directory as the software
+
+The try/except clauses have been used when the .txt file is being read by the csv reader:
+
+- if a FileNotFound or TypeError is raised, then the programme will end using sys.end(). This should only happen if the first GUI is exited without a working file name inputted. The error shown is "Working file name not entered. This programme will now end."
+- if a ValueError is raised, then the programme will end using sys.end(). This should only happen if the inputted file is not delimited by a space (it may instead be delimited by a comma (',') or a semicolon (';')), therefore the file is in the wrong format to be used. The error shown is "Values in .txt file are not formatted correctly. This programme will now end."
+
+The programme will only work if the inputted file is height data delimited by spaces (' '). Sometimes these files can have an extra space at the end of the row which can break the programme. To overcome this the following code has been added to remove any extra spaces at the end of the line being read:
+
+if row[-1] == '':
+    del row[-1] 
