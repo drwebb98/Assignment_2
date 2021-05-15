@@ -34,7 +34,7 @@ Other input files of larger sizes have also been provided to show the versatilit
 `slopes` = Slopes data for the eight cells surrounding cell `e`  
 `positions` = List of eight cells surrounding cell `e` (`a,b,c,d,f,g,k`)  
 `file_name` = Inputted file name taken from `gui.file_input.file_name`  
-`save_file_name` = `file_name` with .txt removed from the end of it so that it can be used to name new save files
+`save_file_name` = `file_name` with .txt removed from the end of it so that it can be used to name new save files  
 `fig0` = Figure showing height data  
 `fig1` = Figure showing slopes data  
 `total_seconds_start` = Start of `time.perfcounter()` to calculate the amount of time the slope calculations take
@@ -64,7 +64,7 @@ g  h  k
 
 *class* **`output`**:  
 `save_txt_file()` = Action of the `save_txt_button` contained within `maps_GUI()`. Saves the slopes map as a .txt file ending in `_slopes.txt` in the same directory the files are in. Associated positional arguments: `all_slopes` `save_file_name`  
-`save_slopes_image()` = Action of the `save_png_button` contained within `maps_GUI()`. Saves the slopes map as a .png image file ending in `_slpoes.png` in the same directory the files are in. Associated positional argument: `save_file_name`  
+`save_slopes_image()` = Action of the `save_png_button` contained within `maps_GUI()`. Saves the slopes map as a .png image file ending in `_slopes.png` in the same directory the files are in. Associated positional argument: `save_file_name`  
 `exit()` = Action of the `exit_button` contained within `maps_GUI()`. Exits the GUI and ends the programme  
 `maps_GUI()` = Information stored on the widgets used to create the output map GUI in tkinter. Associated positional arguments: `fig0` `fig1` `all_slopes` `save_file_name`  
 
