@@ -156,11 +156,3 @@ class output:
         rely = 0.01)
         
         
-
-
-
-
-
-
-
-

@@ -133,3 +133,4 @@ save_file_name = file_name[:(len(file_name)-4)]
 # tkinter GUI showing outputs
 gui.output.maps_GUI(fig0, fig1, all_slopes, save_file_name)
 tkinter.mainloop()
+
