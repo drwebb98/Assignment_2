@@ -1,4 +1,6 @@
 #To the Max!(...imum Gradient...)
+# Assignment 2 GEOG5003M
+# Student Number: 201488484
 
 import sys
 import csv
@@ -120,14 +122,14 @@ matplotlib.pyplot.imshow(heights, cmap = "gray", vmin=0, vmax=255)
 
 
 # Make slopes figure
-fig1 = matplotlib.pyplot.figure(figsize=(8,8))
+fig1 = matplotlib.pyplot.figure(figsize=(7,7))
 matplotlib.pyplot.imshow(all_slopes)
     
 
 # Rename file name without .txt at the end
-file_name = file_name[:(len(file_name)-4)]
+save_file_name = file_name[:(len(file_name)-4)]
 
 
 # tkinter GUI showing outputs
-gui.output.maps_GUI(fig0, fig1, all_slopes, file_name)
+gui.output.maps_GUI(fig0, fig1, all_slopes, save_file_name)
 tkinter.mainloop()
